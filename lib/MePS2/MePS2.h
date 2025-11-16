@@ -42,7 +42,7 @@
  *  Scott           2016/09/23         1.0.3            Add BUTTON_L and BUTTON_R.
  *  Mark Yan        2016/10/08         1.0.4            Modify data format.
  * </pre>
- *
+ *   仅供参考，具体以最新版本为准
  */
 #ifndef MePS2_H
 #define MePS2_H
