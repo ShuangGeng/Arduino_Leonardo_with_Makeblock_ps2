@@ -97,8 +97,8 @@ public:
    *   inverse_logic - Whether the Serial level need inv.
    */
   MePS2(Stream *s);
-  
-  void MePS2::begin(uint32_t baudrate);
+
+  void begin(uint32_t baudrate);
 
   /**
    * \par Function
@@ -211,6 +211,19 @@ public:
    *    None
    */
   void loop(void);
+
+  void printData(void)
+  {
+    for (uint8_t i = 0; i < 16; i++)
+    {
+      Serial.print("0x");
+      Serial.print(buffer[i], HEX);
+      if (i == 15)
+        continue;
+      Serial.print(",");
+    }
+    Serial.println();
+  }
 
 private:
   HardwareSerial *_serial;

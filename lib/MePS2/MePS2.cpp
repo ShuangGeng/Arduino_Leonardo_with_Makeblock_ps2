@@ -311,22 +311,25 @@ void MePS2::loop(void)
     ps2_data_list[MeJOYSTICK_LY] = buffer[4];
     ps2_data_list[MeJOYSTICK_RX] = buffer[6];
     ps2_data_list[MeJOYSTICK_RY] = buffer[8];
+    
     ps2_data_list[MeJOYSTICK_R1] = (buffer[3] & 0x01) == 0x01 ? true : false;
     ps2_data_list[MeJOYSTICK_R2] = (buffer[3] & 0x02) == 0x02 ? true : false;
     ps2_data_list[MeJOYSTICK_L1] = (buffer[3] & 0x04) == 0x04 ? true : false;
     ps2_data_list[MeJOYSTICK_L2] = (buffer[3] & 0x08) == 0x08 ? true : false;
     ps2_data_list[MeJOYSTICK_MODE] = (buffer[3] & 0x10) == 0x10 ? true : false;
+    ps2_data_list[MeJOYSTICK_BUTTON_L] = (buffer[3] & 0x20) == 0x20 ? true : false;
+
     ps2_data_list[MeJOYSTICK_TRIANGLE] = (buffer[5] & 0x01) == 0x01 ? true : false;
     ps2_data_list[MeJOYSTICK_XSHAPED] = (buffer[5] & 0x02) == 0x02 ? true : false;
     ps2_data_list[MeJOYSTICK_SQUARE] = (buffer[5] & 0x04) == 0x04 ? true : false;
     ps2_data_list[MeJOYSTICK_ROUND] = (buffer[5] & 0x08) == 0x08 ? true : false;
     ps2_data_list[MeJOYSTICK_START] = (buffer[5] & 0x10) == 0x10 ? true : false;
+
     ps2_data_list[MeJOYSTICK_UP] = (buffer[7] & 0x01) == 0x01 ? true : false;
     ps2_data_list[MeJOYSTICK_DOWN] = (buffer[7] & 0x02) == 0x02 ? true : false;
     ps2_data_list[MeJOYSTICK_LEFT] = (buffer[7] & 0x04) == 0x04 ? true : false;
     ps2_data_list[MeJOYSTICK_RIGHT] = (buffer[7] & 0x08) == 0x08 ? true : false;
     ps2_data_list[MeJOYSTICK_SELECT] = (buffer[7] & 0x10) == 0x10 ? true : false;
-    ps2_data_list[MeJOYSTICK_BUTTON_L] = (buffer[3] & 0x20) == 0x20 ? true : false;
     ps2_data_list[MeJOYSTICK_BUTTON_R] = (buffer[7] & 0x20) == 0x20 ? true : false;
   }
 }
