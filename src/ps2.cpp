@@ -1,15 +1,18 @@
 #include <Arduino.h>
 #include <MePS2.h>
-
+//实例化对象
 MePS2 ps2 = MePS2(&Serial1);
 
 void setup() {
   Serial.begin(115200);
+  //PS2初始化
   ps2.begin(115200);
 }
 
 void loop() {
+ //PS2数据更新
  ps2.loop();
+ //读取手柄数据
  if (ps2.ButtonPressed(MeJOYSTICK_UP))
  {
    Serial.println("UP is pressed!");
